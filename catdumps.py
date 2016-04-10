@@ -114,3 +114,7 @@ class DumpCater(object):
             return int(match.group('step'))
 
         return get_step
+
+
+if __name__ == '__main__':
+    main()
