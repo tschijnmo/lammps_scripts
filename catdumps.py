@@ -94,7 +94,8 @@ class DumpCater(object):
                 os.path.join(self.base_path, dump)
             ), key=self.form_step_getter(dump))
 
-            with open(dump.replace('*', ''), 'w') as out_fp:
+            out_fn = re.sub(r'[-._]?\*', '', dump)
+            with open(out_fn, 'w') as out_fp:
                 for name in file_names:
                     with open(name, 'r') as inp_fp:
                         out_fp.write(inp_fp.read())
