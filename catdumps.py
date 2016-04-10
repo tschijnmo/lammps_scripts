@@ -46,6 +46,8 @@ class DumpCater(object):
 
         for line in input_fp:
             fields = line.split()
+            if len(fields) == 0:
+                continue
             cmd = fields[0]
 
             if cmd == 'variable':
